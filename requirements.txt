@@ -1,0 +1,11 @@
+pyrainbird>=5.0.0
+httpx>=0.27.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+discord.py>=2.3.0
+
+# Optional — only needed if you wire up Nest cameras for vision analysis.
+# aiortc and av together pull in ffmpeg headers; safe to skip on a minimal install.
+aiortc>=1.6.0
+av>=11.0.0
+google-nest-sdm>=4.0.0

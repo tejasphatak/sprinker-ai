@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily 8:30am sprinkler-ai camera vision snapshot
+
+[Timer]
+OnCalendar=*-*-* 08:30:00
+RandomizedDelaySec=120
+Persistent=true
+
+[Install]
+WantedBy=timers.target

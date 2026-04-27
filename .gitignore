@@ -1,0 +1,24 @@
+.env
+config.yaml
+.venv/
+__pycache__/
+*.pyc
+data/
+!data/.gitkeep
+
+# build artifacts
+*.egg-info/
+build/
+dist/
+
+# IDE / tooling local state
+.claude/settings.local.json
+.idea/
+.vscode/
+.nest-refresh-token
+
+# personal screenshots / images (don't accidentally commit lawn photos)
+*.jpg
+*.jpeg
+*.png
+!docs/**/*.png

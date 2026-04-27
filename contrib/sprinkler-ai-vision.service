@@ -1,0 +1,11 @@
+[Unit]
+Description=sprinkler-ai daylight camera snapshot + lawn vision analysis
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/sprinkler-ai
+ExecStart=%h/sprinkler-ai/.venv/bin/python -u -m sprinkler_ai.cli --vision-snapshot
+StandardOutput=journal
+StandardError=journal

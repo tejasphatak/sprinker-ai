@@ -1,0 +1,16 @@
+[Unit]
+Description=sprinkler-ai Discord bot (long-running, listens for !diagnose)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/sprinkler-ai
+ExecStart=%h/sprinkler-ai/.venv/bin/python -u -m sprinkler_ai.discord_bot
+Restart=on-failure
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

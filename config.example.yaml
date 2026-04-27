@@ -1,0 +1,117 @@
+# =============================================================================
+# sprinkler-ai config — copy to config.yaml and edit. Or run `sprinkler-ai-init`
+# for an interactive walkthrough that writes this for you.
+#
+# This file is gitignored. Don't commit it (zone notes can include PII like
+# property layout, slope, etc.).
+# =============================================================================
+
+location:
+  # Get from Google Maps (right-click → coordinates), or use a city centroid.
+  # These example values are Denver, CO — REPLACE THEM with yours.
+  latitude: 39.74
+  longitude: -104.99
+  timezone: America/Denver
+  # Free-form descriptors that shape the AI planner's prompt. None of these
+  # need to be precise — they're context, not coordinates.
+  region: Mountain West USA
+  climate: semi-arid continental
+  hardiness_zone: "6a"
+
+# Tells the planner what disease/pest watch list to use and which seasonal rules
+# apply (cool-season fescue ≠ Bermuda; humid ≠ arid).
+grass_type: cool-season fescue
+soil_type_default: clay loam
+
+# Free-form site context fed to the AI as background. Write whatever's noteworthy:
+# slope direction, sun exposure quirks, drainage issues, neighbor shadows, etc.
+site_notes: |
+  House faces north. Backyard slopes about 9% away from the patio.
+  Side yards (zones 3 and 6) are narrow strips between us and the neighbors;
+  the homeowner reports they're always fine — don't over-think them.
+
+# Default for any zone that doesn't override it. Spray heads ≈ 38 mm/hr (1.5 in/hr),
+# rotors ≈ 13 mm/hr (0.5 in/hr).
+precipitation_rate_mm_per_hour: 38
+
+# Claude model. "sonnet" is fine for daily planning; switch to "opus" for more nuance.
+# You can also use a full ID like "claude-sonnet-4-6".
+model: sonnet
+
+# Gemini fallback model — used if the Claude CLI fails.
+gemini_model: pro
+
+# Bot persona — how outgoing webhook + Discord-bot messages are branded.
+bot:
+  name: Sahadev
+  avatar_url: ""
+
+notifications:
+  # Discord webhook URL. Server → Integrations → Webhooks. Treat this URL like a
+  # password — anyone with it can post to your channel. Leave empty to disable.
+  discord_webhook_url: ""
+
+# OPTIONAL — Ecowitt GW1200 / GW2000 local IP for WH51 soil-moisture probes.
+# Find in WSView Plus → device → local network. Or set ECOWITT_HOST env var.
+ecowitt_host: ""
+
+# OPTIONAL — Camera → zone mapping for Nest vision. Each entry tells the daily
+# vision snapshot job which Nest cameras to grab a frame from. The room_keyword
+# is matched (case-insensitive substring) against the camera's "Room" name in
+# the Google Home app.
+# camera_targets:
+#   - room_keyword: backyard
+#     label: backyard-cam
+#     covers_zones: [4, 5]
+#   - room_keyword: front
+#     label: front-cam
+#     covers_zones: [1, 2, 7]
+
+# OPTIONAL — Per-camera property-boundary descriptions so the AI knows which lawn
+# in the frame is YOURS (vs the neighbor's). Keys must match `label` above.
+# camera_descriptions:
+#   backyard-cam: |
+#     The patio with the dark fire-pit table is mine. Anything past the wooden
+#     posts in the back of the frame is the neighbor's lot.
+#   front-cam: |
+#     My yard runs from the driveway to the sidewalk strip. The street and the
+#     yard across it belong to others.
+
+# OPTIONAL — Tell the vision model about zones that NO camera can see. Prevents
+# false negatives ("you didn't comment on zone 3") and false positives.
+# invisible_zones_note: "Zones 3 and 6 (sides) are not visible to any camera."
+
+# Sprinkler zones — one per Rainbird zone. `number` should match the controller.
+zones:
+  - number: 1
+    name: Front lawn
+    plant: cool-season fescue
+    sun: full sun
+    soil: clay loam
+    notes: south-facing, dries out fastest
+    # slope_percent: 0
+    # precipitation_rate_mm_per_hour: 38
+    # soil_sensor_channel: 1   # WH51 channel (1-8); omit / 0 if no sensor
+
+  - number: 2
+    name: Backyard lawn
+    plant: cool-season fescue
+    sun: partial shade
+    soil: clay loam
+    notes: morning shade from the house, full sun by noon
+    slope_percent: 9
+    # soil_sensor_channel: 2
+
+  - number: 3
+    name: Front flower beds
+    plant: mixed perennials + shrubs
+    sun: full sun
+    soil: mulched
+    notes: shorter, more frequent watering than the lawn
+
+  - number: 4
+    name: Vegetable garden
+    plant: tomatoes peppers herbs
+    sun: full sun
+    soil: amended
+    notes: water early morning only, avoid foliage

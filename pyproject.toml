@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sprinkler-ai"
+version = "0.1.0"
+description = "AI-driven Rainbird irrigation scheduler with optional camera vision, soil-moisture sensing, and a Discord lawn-diagnosis bot"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+keywords = ["sprinkler", "irrigation", "rainbird", "lawn", "ai", "claude", "automation"]
+dependencies = [
+    "pyrainbird>=5.0.0",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "discord.py>=2.3.0",
+]
+
+[project.optional-dependencies]
+# Camera vision (Nest WebRTC + frame decode). Skip if you don't use cameras.
+vision = [
+    "aiortc>=1.6.0",
+    "av>=11.0.0",
+    "google-nest-sdm>=4.0.0",
+]
+
+[project.scripts]
+sprinkler-ai = "sprinkler_ai.cli:main"
+sprinkler-ai-bot = "sprinkler_ai.discord_bot:main"
+sprinkler-ai-init = "sprinkler_ai.init:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

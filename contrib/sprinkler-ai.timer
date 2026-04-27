@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily 4am sprinkler-ai irrigation run
+
+[Timer]
+OnCalendar=*-*-* 04:00:00
+RandomizedDelaySec=60
+Persistent=true
+
+[Install]
+WantedBy=timers.target
