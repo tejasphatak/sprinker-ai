@@ -120,7 +120,7 @@ sprinkler-ai/
 ### Install
 
 ```bash
-git clone https://github.com/<you>/sprinkler-ai.git
+git clone https://github.com/tejasphatak/sahadev-the-lawnbot.git sprinkler-ai
 cd sprinkler-ai
 ./install.sh
 ```
