@@ -42,6 +42,11 @@ model: sonnet
 gemini_model: pro
 
 # Bot persona — how outgoing webhook + Discord-bot messages are branded.
+# The default name "Sahadev" is a wink at the young weather-watcher in the 2004
+# Indian film Swades. He confidently tells the village elders:
+#   "asmaan saaf hai, do din tak badal nazar nahi aaenge"
+#   (the sky is clear — no clouds for the next two days)
+# A weather-watcher naming a sprinkler bot felt right. Rename to anything.
 bot:
   name: Sahadev
   avatar_url: ""

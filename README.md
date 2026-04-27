@@ -11,9 +11,9 @@
 > ⚠️ **Alpha** — single-author, early days. The control loop *will* turn your
 > sprinklers on. Run `--dry-run` for a week first. MIT, no warranty.
 
-> **"asmaan saaf hai, do din tak badal nazar nahi aaenge."**
-> *the sky is clear — no clouds for the next two days*
-> — Sahadev, *Swades* (2004)
+<p align="center">
+  <img src="docs/images/discord-plan.png" alt="Daily plan posted to Discord — Sahadev explains why it's skipping today" width="380">
+</p>
 
 A small Python service that runs on any always-on Linux box and replaces your
 Rainbird's static schedule with a daily AI-decided plan. Once a morning it asks
@@ -105,13 +105,6 @@ cp .env.example .env
 
 Both files are gitignored. They hold zone descriptions, location, controller
 credentials, and any optional service tokens.
-
-## Why "Sahadev"?
-
-The default Discord-bot name is a wink at the young weather-watcher in *Swades*
-(2004) — the kid who confidently tells the village elders that the sky will
-hold for two more days. A weather-watcher naming a sprinkler bot felt right.
-Override in `config.yaml` under `bot.name`.
 
 ## Why the `claude` CLI instead of the API?
 
