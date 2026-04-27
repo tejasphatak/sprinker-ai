@@ -8,29 +8,6 @@
 > automation. No warranty — see [LICENSE](LICENSE). Bugs and rough edges expected;
 > please file issues.
 
-```
-       \    |    /
-        \   |   /
-         \  |  /
-      -----( * )-----        ← clear sun, asmaan saaf hai
-         /  |  \
-        /   |   \
-       /    |    \
-
-              ____
-          ___/    \___        ← bent arm
-         /   ______   \
-        |   /      \   |      ← hand cupped at brow
-        |   \  ^^  /         ← eyes squinting up at the sky
-        |    \____/
-        |       |
-        |    __ |              ← chin / faint smile
-         \  /   |
-          \/____|
-         __|    |__            ← shoulders / upper chest
-        /          \
-```
-
 > **"asmaan saaf hai, do din tak badal nazar nahi aaenge."**
 > *the sky is clear — no clouds for the next two days*
 > — Sahadev, *Swades* (2004)
