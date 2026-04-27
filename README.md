@@ -8,7 +8,28 @@
 > automation. No warranty — see [LICENSE](LICENSE). Bugs and rough edges expected;
 > please file issues.
 
-![sprinkler-ai Discord plan + diagnosis](https://i.postimg.cc/RMDcPkR8/Screenshot-20260426-114819.png)
+```
+            \   |   /
+             \  |  /
+              \ | /
+          -----(*)-----
+              / | \
+             /  |  \
+            /   |   \
+
+                  o
+                 /|\
+                / | \
+                  |
+                 / \
+                /   \
+
+      "asmaan saaf hai, do din tak
+       badal nazar nahi aaenge."
+                       — Sahadev
+        (the sky is clear, no clouds
+         for the next two days)
+```
 
 ## What it does
 

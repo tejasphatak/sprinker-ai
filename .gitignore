@@ -22,3 +22,4 @@ dist/
 *.jpeg
 *.png
 !docs/**/*.png
+!docs/images/*.png
